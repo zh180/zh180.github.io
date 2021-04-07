@@ -1,0 +1,169 @@
+<!doctype html><!--声明文档类型:html-->
+<html lang="en"><!--头部-->
+ <head>
+  <meta charset="UTF-8"><!--字符编码:utf-8国际编码-->
+  <meta name="Generator" content="EditPlus®"><!--页面生成工具-->
+  <meta name="Author" content=""><!--网页开发者-->
+  <meta name="Keywords" content=""><!--网页关键词-->
+  <meta name="Description" content=""><!--网页描述-->
+  <title>Document</title><!--网页标题-->
+  <style type="text/css">
+	body,ul{margin:0;padding:0;}
+	ul{list-style:none;}
+	img{vertical-align:middle;border:0;}
+	/*s list*/
+	.wrap{
+		width:700px;
+		margin:100px auto;
+	}
+	.wrap ul{
+		display:flex; /* 弹性布局 处理页面行排列布局 */
+		justify-content:space-between;
+	}
+	.wrap li{
+		position:relative; /* 相对定位 */
+		width:220px;
+		height:220px;
+	}
+	.wrap li img{
+		width:200px;
+		height:200px;
+		padding:10px;
+		border-radius:10px; /* 图片圆角 */
+		transition:.5s; /* 过度时间 */
+	}
+	.wrap li:before,.wrap li:after{
+		display:none;
+		position:absolute; /* 绝对定位 */
+		top:0px;
+		left:0px;
+		width:240px;
+		height:0;
+		content:"";
+		border-style:solid;
+	}
+	.wrap li:hover:before,.wrap li:hover:after{
+		display:block;
+		opacity:1;
+	}
+	.wrap li:hover:before{
+		animation:rbefore 4s infinite;
+	}
+	.wrap li:hover:after{
+		animation:rafter 4s infinite;
+	}
+	.wrap li:hover img{
+		transform:rotate(180deg) rotateY(180deg) rotateX(180deg);
+	}
+	@keyframes rbefore{
+		0%{
+			top:0px;
+			left:0px;
+			width:220px;
+			height:0;
+			border-width:1px 0 0 0;
+			border-color:red;
+		}
+		25%{
+			top:0px;
+			left:0px;
+			width:0;
+			height:220px;
+			border-width:0 0 0 1px;
+			border-color:orange;
+		}
+		50%{
+			top:220px;
+			left:0px;
+			width:220px;
+			height:0;
+			border-width:0 0 1px 0;
+			border-color:yellow;
+		}
+		75%{
+			top:0px;
+			left:220px;
+			width:0;
+			height:220px;
+			border-width:0 1px 0 0;
+			border-color:green;
+		}
+		100%{
+			top:0px;
+			left:0px;
+			width:220px;
+			height:0;
+			border-width:1px 0 0 0;
+			border-color:Cyan;
+		}
+	}
+	@keyframes rafter{
+		0%{
+			top:220px;
+			left:0px;
+			width:220px;
+			height:0;
+			border-width:0 0 1px 0;
+			border-color:blue;
+		}
+		25%{
+			top:0px;
+			left:220px;
+			width:0;
+			height:220px;
+			border-width:0 1px 0 0;
+			border-color:purple;
+		}
+		50%{
+			top:0px;
+			left:0px;
+			width:220px;
+			height:0;
+			border-width:1px 0 0 0;
+			border-color:pink;
+		}
+		75%{
+			top:0px;
+			left:0;
+			width:0;
+			height:220px;
+			border-width:0 0 0 1px;
+			border-color:gray;
+		}
+		100%{
+			top:220px;
+			left:0px;
+			width:220px;
+			height:0;
+			border-width:0 0 1px 0;
+			border-color:black;
+		}
+	}
+	/*s heart*/
+  </style>
+ </head>
+ <body>
+	<div class="wrap">
+		<ul>
+			<li>
+				<a href="#">
+					<img src="images/demo1/1.jpg" width="200" height="200" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/demo1/2.jpg" width="200" height="200" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/demo1/3.jpg" width="200" height="200" alt="" />
+				</a>
+			</li>
+		</ul>
+	</div>
+ </body>
+</html>
+<!-- 1.先给外面一个大盒子类名wrap,用ul>li ul包裹3个li,a标签插入图片，给图片宽和高，给大盒子宽度700px, 外边距居中。
+display:none;隐藏（不占空间的） 
+display:block;显示 -->
